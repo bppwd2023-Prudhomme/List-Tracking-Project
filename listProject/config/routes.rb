@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :groups
+  resources :items
+  resources :permissions
+  resources :sections
+  resources :lists
   
   get 'page/home'
 

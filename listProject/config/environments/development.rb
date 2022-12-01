@@ -3,8 +3,10 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
   config.hosts << "oxygenvoltage-laborlucky-3000.codio.io"
   config.hosts << "horizonregion-thomasroyal-3000.codio.io"
+  config.hosts << "metalcomplex-albinodaniel-3000.codio.io"
   
 
   # Settings specified here will take precedence over those in config/application.rb.

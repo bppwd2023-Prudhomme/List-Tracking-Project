@@ -10,7 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_190412) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_192201) do
+  create_table "groups", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "list_id"
+    t.string "title"
+    t.boolean "important"
+    t.datetime "deadline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "section_id"
+    t.string "title"
+    t.boolean "archived"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "permissions", force: :cascade do |t|
+    t.integer "permissable_id"
+    t.integer "list_id"
+    t.string "title"
+    t.boolean "canRead"
+    t.boolean "canUpdelete"
+    t.string "permissableType"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

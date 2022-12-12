@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'groups/addUser'
+  get 'lists/shared'
+  get 'lists/share'
   resources :groups
   resources :items
   resources :permissions
@@ -16,5 +19,5 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "page#home"
+  root "sections#index"
 end

@@ -3,6 +3,7 @@
 <%= render @group %>
 
 <div>
+  <%= link_to "Add User", groups_addUser_path(id: @group.id) %> |
   <%= link_to "Edit this group", edit_group_path(@group) %> |
   <%= link_to "Back to groups", groups_path %>
 

@@ -4,6 +4,7 @@ class SectionsController < ApplicationController
   # GET /sections or /sections.json
   def index
     @sections = Section.all
+    @lists = List.where(section_id: 1)
   end
 
   # GET /sections/1 or /sections/1.json

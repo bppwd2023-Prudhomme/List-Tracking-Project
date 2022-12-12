@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: %i[ show edit update destroy ]
+  before_action :set_group, only: %i[ show edit update destroy addUser ]
 
   # GET /groups or /groups.json
   def index
@@ -9,6 +9,14 @@ class GroupsController < ApplicationController
   # GET /groups/1 or /groups/1.json
   def show
     puts "\n\n\n\n\n\n\n\n"
+    puts params
+    if(params[:user] != nil)
+      if(User.where(email: params[:user]) != [] && !@group.users.include?(User.where(email: params[:user])[0]))
+        @group.users << User.where(email: params[:user])[0]
+      else
+        puts "no"
+      end
+    end
     puts @group.users
     puts "\n\n\n\n\n\n\n\n"
   end
@@ -20,6 +28,9 @@ class GroupsController < ApplicationController
 
   # GET /groups/1/edit
   def edit
+  end
+
+  def addUser
   end
 
   # POST /groups or /groups.json

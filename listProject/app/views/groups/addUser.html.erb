@@ -1,0 +1,11 @@
+<%= form_with url: group_path(id: @group.id), method: :get do |form| %>
+  
+  <div>
+    <%= form.label :user %>
+    <%= form.search_field :user %>
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

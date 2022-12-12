@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: %i[ show edit update destroy ]
+  before_action :set_list, only: %i[ show edit update destroy share]
 
   # GET /lists or /lists.json
   def index
@@ -17,6 +17,13 @@ class ListsController < ApplicationController
 
   # GET /lists/1/edit
   def edit
+  end
+
+  def shared
+    @lists = List.where.not(user_id: current_user.id)
+  end
+
+  def share
   end
 
   # POST /lists or /lists.json
@@ -61,7 +68,9 @@ class ListsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_list
       @list = List.find(params[:id])
-      authorize @list
+      if(@list.user.id != current_user.id)
+        authorize @list
+      end
     end
 
     # Only allow a list of trusted parameters through.

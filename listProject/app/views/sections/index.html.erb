@@ -1,5 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
+<% @lists.each do |list| %>
+  <%= render list %>
+  <p>
+    <%= link_to "Show this list", list %>
+  </p>
+<% end %>
+
 <h1>Sections</h1>
 
 <div id="sections">

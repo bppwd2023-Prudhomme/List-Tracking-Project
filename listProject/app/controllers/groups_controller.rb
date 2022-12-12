@@ -8,6 +8,9 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
+    puts "\n\n\n\n\n\n\n\n"
+    puts @group.users
+    puts "\n\n\n\n\n\n\n\n"
   end
 
   # GET /groups/new

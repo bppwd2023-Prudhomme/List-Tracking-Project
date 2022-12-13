@@ -17,7 +17,7 @@ class PermissionsTest < ApplicationSystemTestCase
     check "Canread" if @permission.canRead
     check "Canupdelete" if @permission.canUpdelete
     fill_in "List", with: @permission.list_id
-    fill_in "Permissabletype", with: @permission.permissableType
+    fill_in "permissable_type", with: @permission.permissable_type
     fill_in "Permissable", with: @permission.permissable_id
     fill_in "Title", with: @permission.title
     click_on "Create Permission"
@@ -33,7 +33,7 @@ class PermissionsTest < ApplicationSystemTestCase
     check "Canread" if @permission.canRead
     check "Canupdelete" if @permission.canUpdelete
     fill_in "List", with: @permission.list_id
-    fill_in "Permissabletype", with: @permission.permissableType
+    fill_in "permissable_type", with: @permission.permissable_type
     fill_in "Permissable", with: @permission.permissable_id
     fill_in "Title", with: @permission.title
     click_on "Update Permission"

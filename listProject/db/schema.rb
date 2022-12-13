@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_183826) do
     t.string "title"
     t.boolean "canRead"
     t.boolean "canUpdelete"
-    t.string "permissableType"
+    t.string "permissable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

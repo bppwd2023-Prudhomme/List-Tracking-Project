@@ -3,7 +3,13 @@ class ListsController < ApplicationController
 
   # GET /lists or /lists.json
   def index
-    @lists = List.all
+    @lists = List.where(user_id: current_user.id)
+    puts "\n\n\n\n\n\n"
+    current_user.lists.each do |list|
+      puts list.id
+    end
+    puts "\n\n\n\n\n\n"
+
   end
 
   # GET /lists/1 or /lists/1.json
@@ -20,7 +26,13 @@ class ListsController < ApplicationController
   end
 
   def shared
-    @lists = List.where.not(user_id: current_user.id)
+    #@lists = List.where.not(user_id: current_user.id)
+    @lists = []
+    current_user.permissions.each do |permission|
+      puts "\n\n\n\n\n\n"
+      puts permission
+      puts "\n\n\n\n\n"
+    end
   end
 
   def share

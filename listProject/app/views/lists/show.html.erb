@@ -3,7 +3,7 @@
 <%= render @list %>
 
 <div>
-  <%= link_to "Share this list", lists_share_path(id: @list.id) %> |
+  <%= link_to "Share this list", new_permission_path(id: @list.id) %> |
   <%= link_to "Edit this list", edit_list_path(@list) %> |
   <%= link_to "Back to lists", lists_path %>
 

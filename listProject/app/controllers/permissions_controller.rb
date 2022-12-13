@@ -13,6 +13,7 @@ class PermissionsController < ApplicationController
   # GET /permissions/new
   def new
     @permission = Permission.new
+    @list = List.find(params[:id])
   end
 
   # GET /permissions/1/edit
@@ -65,6 +66,6 @@ class PermissionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def permission_params
-      params.require(:permission).permit(:permissable_id, :list_id, :title, :canRead, :canUpdelete, :permissableType)
+      params.require(:permission).permit(:permissable_id, :list_id, :title, :canRead, :canUpdelete, :permissable_type)
     end
 end

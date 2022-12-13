@@ -6,7 +6,7 @@ one:
   title: MyString
   canRead: false
   canUpdelete: false
-  permissableType: MyString
+  permissable_type: MyString
 
 two:
   permissable_id: 1
@@ -14,4 +14,4 @@ two:
   title: MyString
   canRead: false
   canUpdelete: false
-  permissableType: MyString
+  permissable_type: MyString

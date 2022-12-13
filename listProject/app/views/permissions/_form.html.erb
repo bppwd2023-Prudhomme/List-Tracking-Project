@@ -17,8 +17,7 @@
   </div>
 
   <div>
-    <%= form.label :list_id, style: "display: block" %>
-    <%= form.number_field :list_id %>
+    <%= form.hidden_field :list_id, :value => @list.id %>
   </div>
 
   <div>
@@ -37,8 +36,8 @@
   </div>
 
   <div>
-    <%= form.label :permissableType, style: "display: block" %>
-    <%= form.text_field :permissableType %>
+    <%= form.label :permissable_type, style: "display: block" %>
+    <%= form.text_field :permissable_type %>
   </div>
 
   <div>

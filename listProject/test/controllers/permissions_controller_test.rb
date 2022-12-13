@@ -17,7 +17,7 @@ class PermissionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create permission" do
     assert_difference("Permission.count") do
-      post permissions_url, params: { permission: { canRead: @permission.canRead, canUpdelete: @permission.canUpdelete, list_id: @permission.list_id, permissableType: @permission.permissableType, permissable_id: @permission.permissable_id, title: @permission.title } }
+      post permissions_url, params: { permission: { canRead: @permission.canRead, canUpdelete: @permission.canUpdelete, list_id: @permission.list_id, permissable_type: @permission.permissable_type, permissable_id: @permission.permissable_id, title: @permission.title } }
     end
 
     assert_redirected_to permission_url(Permission.last)
@@ -34,7 +34,7 @@ class PermissionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update permission" do
-    patch permission_url(@permission), params: { permission: { canRead: @permission.canRead, canUpdelete: @permission.canUpdelete, list_id: @permission.list_id, permissableType: @permission.permissableType, permissable_id: @permission.permissable_id, title: @permission.title } }
+    patch permission_url(@permission), params: { permission: { canRead: @permission.canRead, canUpdelete: @permission.canUpdelete, list_id: @permission.list_id, permissable_type: @permission.permissable_type, permissable_id: @permission.permissable_id, title: @permission.title } }
     assert_redirected_to permission_url(@permission)
   end
 

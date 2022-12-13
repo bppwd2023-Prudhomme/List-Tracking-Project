@@ -6,7 +6,7 @@ class CreatePermissions < ActiveRecord::Migration[7.0]
       t.string :title
       t.boolean :canRead
       t.boolean :canUpdelete
-      t.string :permissableType
+      t.string :permissable_type
 
       t.timestamps
     end

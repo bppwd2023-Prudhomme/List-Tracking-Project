@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :permissable_id, style: "display: block" %>
-    <%= form.number_field :permissable_id %>
+    <%= options_from_collection_for_select() %>
   </div>
 
   <div>
@@ -37,7 +37,7 @@
 
   <div>
     <%= form.label :permissable_type, style: "display: block" %>
-    <%= form.text_field :permissable_type %>
+    <%= select_tag(:permissible_type, options_for_select([['User', 'User'], ['Group', 'Group']])) %>
   </div>
 
   <div>

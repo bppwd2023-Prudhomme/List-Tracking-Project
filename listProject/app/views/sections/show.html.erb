@@ -1,6 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @section %>
+<h1><%= @section.title %></h1>
+<h2>Lists:</h2>
+
+<% @lists.each do |list| %>
+  <%= render list %>
+  <p>
+    <%= link_to "Show this list", list %>
+  </p>
+<% end %>
 
 <div>
   <%= link_to "Edit this section", edit_section_path(@section) %> |

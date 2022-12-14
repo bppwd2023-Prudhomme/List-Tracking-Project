@@ -3,12 +3,19 @@ class SectionsController < ApplicationController
 
   # GET /sections or /sections.json
   def index
-    @sections = Section.all
-    @lists = List.where(section_id: 1)
+    @sections = Section.where(user_id: current_user.id)
+    #@lists = List.all
+    @lists = List.where("section_id IS ? AND user_id == ?", nil, current_user.id)
+    puts "\n\n\n\n\n\n\n\n\n\n"
+    @lists.each do |list|
+      puts list.section_id
+    end
+    puts "\n\n\n\n\n\n\n\n\n\n"
   end
 
   # GET /sections/1 or /sections/1.json
   def show
+    @lists = @section.lists
   end
 
   # GET /sections/new
@@ -66,6 +73,6 @@ class SectionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def section_params
-      params.require(:section).permit(:title)
+      params.require(:section).permit(:title, :user_id)
     end
 end

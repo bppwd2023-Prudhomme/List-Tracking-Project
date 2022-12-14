@@ -10,5 +10,7 @@ class User < ApplicationRecord
   has_many :lists, through: :permissions
 
   has_many :mylists, class_name: "List"
+
+  has_many :sections
   
 end

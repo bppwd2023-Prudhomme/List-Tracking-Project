@@ -14,6 +14,7 @@ class ListsController < ApplicationController
 
   # GET /lists/1 or /lists/1.json
   def show
+    #@items = items
   end
 
   # GET /lists/new

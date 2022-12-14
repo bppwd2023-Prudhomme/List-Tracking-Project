@@ -15,7 +15,7 @@ class SectionsController < ApplicationController
 
   # GET /sections/1 or /sections/1.json
   def show
-    @lists = @section.lists
+    @lists = @section.lists.where(archived: false)
   end
 
   # GET /sections/new

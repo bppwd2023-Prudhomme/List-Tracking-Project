@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'groups/addUser'
   get 'lists/shared'
-  get 'lists/share'
+  get 'lists/archive'
   resources :groups
   resources :items
   resources :permissions

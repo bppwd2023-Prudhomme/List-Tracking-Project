@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Archived Lists</h1>
+
+<div id="lists">
+  <% @lists.each do |list| %>
+    <%= render list %>
+    <p>
+      <%= link_to "Show this list", list %>
+    </p>
+  <% end %>
+</div>
+

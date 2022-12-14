@@ -3,7 +3,7 @@ class ListsController < ApplicationController
 
   # GET /lists or /lists.json
   def index
-    @lists = List.where(user_id: current_user.id)
+    @lists = List.where("user_id == ? AND archived == ?", current_user.id, false)
     puts "\n\n\n\n\n\n"
     current_user.lists.each do |list|
       puts list.id
@@ -37,6 +37,10 @@ class ListsController < ApplicationController
   end
 
   def share
+  end
+
+  def archive
+    @lists = List.where(archived: true)
   end
 
   # POST /lists or /lists.json

@@ -60,6 +60,14 @@ class PermissionsController < ApplicationController
     end
   end
 
+  def permisChange
+    puts"\n\n\n\n\n\n\n\n\n\n\n\n"
+    puts params
+    puts"\n\n\n\n\n\n\n\n\n\n\n\n"
+
+    @permissables = params[:permType].all #i do not know if this is right
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_permission

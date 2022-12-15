@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_and_belongs_to_many :groups
 
   has_many :permissions, as: :permissable
-  has_many :lists, through: :permissions
+  has_many :lists, as: :permissable, through: :permissions
 
   has_many :mylists, class_name: "List"
 

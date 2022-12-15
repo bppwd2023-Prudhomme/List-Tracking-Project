@@ -12,8 +12,13 @@
   <% end %>
 
   <div>
+    <%= form.label :permissable_type, style: "display: block" %>
+    <%= select_tag(:permissible_type, options_for_select([['User', 'User'], ['Group', 'Group']])) %>
+  </div>
+
+  <div id="permissableDiv">
     <%= form.label :permissable_id, style: "display: block" %>
-    <%= options_from_collection_for_select() %>
+    <%= select_tag(:permissable_id, options_from_collection_for_select(@users, 'id', 'email')) %>
   </div>
 
   <div>
@@ -33,11 +38,6 @@
   <div>
     <%= form.label :canUpdelete, style: "display: block" %>
     <%= form.check_box :canUpdelete %>
-  </div>
-
-  <div>
-    <%= form.label :permissable_type, style: "display: block" %>
-    <%= select_tag(:permissible_type, options_for_select([['User', 'User'], ['Group', 'Group']])) %>
   </div>
 
   <div>

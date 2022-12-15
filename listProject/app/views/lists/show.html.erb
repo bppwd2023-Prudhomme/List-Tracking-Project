@@ -3,12 +3,18 @@
 <h1><%= @list.title %></h1>
 <h2>Items:</h2>
 <% @list.items.each do |item| %>
-  <%= render item %>
+  <div class="mb-5">
+    <%= render item %>
+    <%= link_to "Show this item", item %>
+  </div>
 <% end %>
 
 <div>
-  <%= link_to "Share this list", new_permission_path(id: @list.id) %> |
-  <%= link_to "Edit this list", edit_list_path(@list) %>
+  <% if !@list.archived %>
+    <%= link_to "Share this list", new_permission_path(id: @list.id) %> |
+  <% end %>
+  <%= link_to "Edit this list", edit_list_path(@list) %> |
+  <%= link_to "Add item", new_item_path(list_id: @list.id) %>
 
   <% if @list.archived && @list.user.id == current_user.id %>
     <%= button_to "Destroy this list", @list, method: :delete %>

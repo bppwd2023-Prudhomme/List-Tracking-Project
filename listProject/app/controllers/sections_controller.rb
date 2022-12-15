@@ -5,7 +5,7 @@ class SectionsController < ApplicationController
   def index
     @sections = Section.where(user_id: current_user.id)
     #@lists = List.all
-    @lists = List.where("section_id IS ? AND user_id == ?", nil, current_user.id)
+    @lists = List.where("section_id IS ? AND user_id == ? AND archived == ?", nil, current_user.id, false)
     puts "\n\n\n\n\n\n\n\n\n\n"
     @lists.each do |list|
       puts list.section_id

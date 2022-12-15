@@ -24,6 +24,7 @@ class ListsController < ApplicationController
 
   # GET /lists/1/edit
   def edit
+    authorize @list
   end
 
   def shared

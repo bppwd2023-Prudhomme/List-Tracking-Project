@@ -14,6 +14,8 @@ class PermissionsController < ApplicationController
   def new
     @permission = Permission.new
     @list = List.find(params[:id])
+    @users = User.all
+    @groups = Group.all
   end
 
   # GET /permissions/1/edit

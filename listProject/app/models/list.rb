@@ -5,7 +5,7 @@ class List < ApplicationRecord
   belongs_to :user
 
 
-  has_many :permissions
-  has_and_belongs_to_many :permissables, polymorphic: true, through: :permissions
+  has_many :permissions, dependent: :destroy
+  has_many :permissables, through: :permissions
 
 end 

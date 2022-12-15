@@ -5,7 +5,7 @@ class ListPolicy < ApplicationPolicy
   def update?
     puts "\n\n\n\n\n\n\n\n\n\n\n\n"
     if(@user.id == @record.user.id)
-      true
+      return true
     end
     @user.permissions.each do |perm|
       puts perm.title

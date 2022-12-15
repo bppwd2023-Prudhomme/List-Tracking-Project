@@ -1,2 +1,47 @@
-<h1>Page#home</h1>
-<p>Find me in app/views/page/home.html.erb</p>
+
+<div id = "piconhome">
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+      <% if current_user %>
+      <%= button_to "LOG OUT", destroy_user_session_path, class: "mylink", method: :delete %>
+      <% else %>
+      <%= button_to "SIGN IN", user_session_path, class: "mylink" %>
+      <% end %>
+
+        <li class="nav-item">
+          <%= link_to "SECTIONS", sections_path, class: "mylink" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "LISTS", lists_path, class: "mylink" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ARCHIVE", lists_archive_path, class: "mylink" %>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li>
+          <%= link_to "SHARED WITH ME", lists_shared_path, class: "mylink" %>
+        </li>
+        <li>
+          <%= link_to "GROUPS", groups_path, class: "mylink" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div id = "homeheader">
+<h1>Welcome to ListNow </h1>
+</div>
+<div id = "homebio">
+<h2>ListNow is a simple, free list maker. <br> Create a list, share it to friends and even groups! <br> Make your account now to get started! </h2>
+</div>
+</div>
+
+
+

@@ -3,53 +3,53 @@
   <head>
     <title>ListProject</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "custom" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
   </head>
 
   <body>
-  <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <% if current_user %>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-      <% if current_user %>
-      <%= button_to("Log Out", destroy_user_session_path, class: "mybutton", method: :delete) %>
-      <% else %>
-      <%= button_to "Sign In", user_session_path, class: "mybutton" %>
-      <% end %>
+          <% if current_user %>
+          <%= button_to "LOG OUT", destroy_user_session_path, class: "mylink", method: :delete %>
+          <% else %>
+          <%= button_to "SIGN IN", user_session_path, class: "mylink" %>
+          <% end %>
 
-        <li class="nav-item">
-          <%= link_to "Home", sections_path, class: "mybutton" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Lists", lists_path, class: "mybutton" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Archive", lists_archive_path, class: "mybutton" %>
-        </li>
-      </ul>
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li>
-          <%= link_to "Shared With Me", lists_shared_path, class: "mybutton" %>
-        </li>
-        <li>
-          <%= link_to "Groups", groups_path, class: "mybutton" %>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
+            <li class="nav-item">
+              <%= link_to "SECTIONS", sections_path, class: "mylink" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "LISTS", lists_path, class: "mylink" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ARCHIVE", lists_archive_path, class: "mylink" %>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li>
+              <%= link_to "SHARED WITH ME", lists_shared_path, class: "mylink" %>
+            </li>
+            <li>
+              <%= link_to "GROUPS", groups_path, class: "mylink" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <% end %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>

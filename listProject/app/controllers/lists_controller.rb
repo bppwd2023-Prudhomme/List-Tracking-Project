@@ -20,10 +20,12 @@ class ListsController < ApplicationController
   # GET /lists/new
   def new
     @list = List.new
+    @sections = Section.where(user_id: current_user.id)
   end
 
   # GET /lists/1/edit
   def edit
+    @sections = Section.where(user_id: current_user.id)
     authorize @list
   end
 
@@ -63,6 +65,9 @@ class ListsController < ApplicationController
   def update
     respond_to do |format|
       if @list.update(list_params)
+        puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        puts params
+        puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
         format.html { redirect_to list_url(@list), notice: "List was successfully updated." }
         format.json { render :show, status: :ok, location: @list }
       else

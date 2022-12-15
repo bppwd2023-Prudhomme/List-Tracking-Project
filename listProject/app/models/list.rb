@@ -1,5 +1,5 @@
 class List < ApplicationRecord
-  has_many :items
+  has_many :items, dependent: :destroy
   belongs_to :section, optional: true
 
   belongs_to :user

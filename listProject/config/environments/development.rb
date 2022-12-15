@@ -7,6 +7,7 @@ Rails.application.configure do
   config.hosts << "oxygenvoltage-laborlucky-3000.codio.io"
   config.hosts << "horizonregion-thomasroyal-3000.codio.io"
   config.hosts << "metalcomplex-albinodaniel-3000.codio.io"
+  config.hosts << "vitallagoon-privatecraft-3000.codio.io"
   
 
   # Settings specified here will take precedence over those in config/application.rb.

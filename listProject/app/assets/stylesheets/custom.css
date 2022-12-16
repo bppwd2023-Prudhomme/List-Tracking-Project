@@ -29,7 +29,7 @@ font-style: normal;
   font-family: 'Isabella Sans Thin', sans-serif;}
 
 body{
-  background-color: #abddfe 
+  background-color: #abddfe;
 }
 
 
@@ -61,5 +61,6 @@ body{
     position: relative;
     top: 180px;
     left: 160px;
-    color: #abddfe
+    color: #abddfe;
 }
+

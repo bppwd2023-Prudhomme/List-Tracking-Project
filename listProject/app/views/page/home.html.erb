@@ -1,4 +1,3 @@
-
 <div id = "piconhome">
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
@@ -7,12 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-      <% if current_user %>
-      <%= button_to "LOG OUT", destroy_user_session_path, class: "mylink", method: :delete %>
-      <% else %>
       <%= button_to "SIGN IN", user_session_path, class: "mylink" %>
-      <% end %>
 
         <li class="nav-item">
           <%= link_to "SECTIONS", sections_path, class: "mylink" %>
@@ -42,6 +36,3 @@
 <h2>ListNow is a simple, free list maker. <br> Create a list, share it to friends and even groups! <br> Make your account now to get started! </h2>
 </div>
 </div>
-
-
-

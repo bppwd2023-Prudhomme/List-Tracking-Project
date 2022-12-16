@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    @list = @item.list
   end
 
   # POST /items or /items.json

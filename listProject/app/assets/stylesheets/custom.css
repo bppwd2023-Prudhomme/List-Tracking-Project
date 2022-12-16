@@ -1,7 +1,6 @@
 @font-face {
-font-family: "Isabella Sans Thin"; 
-src: url("https://db.onlinewebfonts.com/t/e1ea0c44b27fc45a25dfc8154c3f3162.eot"); 
-src: url("https://db.onlinewebfonts.com/t/e1ea0c44b27fc45a25dfc8154c3f3162.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/e1ea0c44b27fc45a25dfc8154c3f3162.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/e1ea0c44b27fc45a25dfc8154c3f3162.woff") format("woff"), url("https://db.onlinewebfonts.com/t/e1ea0c44b27fc45a25dfc8154c3f3162.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/e1ea0c44b27fc45a25dfc8154c3f3162.svg#Isabella Sans Thin") format("svg");
+font-family: "Isabella Sans"; 
+src: url("https://db.onlinewebfonts.com/t/31b91eb74b9bc396a116918babe58d11.eot"); src: url("https://db.onlinewebfonts.com/t/31b91eb74b9bc396a116918babe58d11.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/31b91eb74b9bc396a116918babe58d11.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/31b91eb74b9bc396a116918babe58d11.woff") format("woff"), url("https://db.onlinewebfonts.com/t/31b91eb74b9bc396a116918babe58d11.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/31b91eb74b9bc396a116918babe58d11.svg#Isabella Sans") format("svg");
 font-weight: normal;
 font-style: normal;
 }
@@ -15,6 +14,11 @@ font-style: normal;
 }
 
 
+*{
+  font-family: 'Isabella Sans', sans-serif;
+  font-weight: bold;
+}
+
 .mylink{
 
   color: black;
@@ -26,15 +30,18 @@ font-style: normal;
   display: inline-block;
   font-size: 16px;
   font-weight: bold;
-  font-family: 'Isabella Sans Thin', sans-serif;}
+  font-family: 'Isabella Sans', sans-serif;}
 
 body{
-  background-color: #abddfe 
+  /* background-color: #9ac7e5; */
+    background-image: url(finalbackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
 #piconhome{
-  background-image: url(mypeople.jpg);
+  background-image: url(myfinalpeople.png);
   background-repeat: repeat-x;
   margin: auto;
   height: 830px;
@@ -43,7 +50,7 @@ body{
   position: relative;
   top: 50px;
   background-repeat: no-repeat;
-  background-position: center
+  background-position: center;
 }
    
 #homeheader h1{
@@ -51,8 +58,8 @@ body{
     font-family: 'Nexa Text Heavy', sans-serif;
     position: relative;
     top: 180px;
-    left: 160px;
-    color: #5068d5
+    left: 145px;
+    color: #7186df;
 }
 
 #homebio h2{
@@ -60,6 +67,72 @@ body{
     font-family: 'Nexa Text Heavy', sans-serif;
     position: relative;
     top: 180px;
-    left: 160px;
-    color: #abddfe
+    left: 95px;
+    color: #9ac7e5;
 }
+
+button.mylink{
+  color:white;
+  background-color: #7186df;
+  position: relative;
+  top: 450px;
+  left: 260px;
+
+}
+
+.topbutton{
+  color:white;
+  background-color: #7186df;
+  border-radius: 12px;
+  padding: 15px 32px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Isabella Sans', sans-serif;}
+
+}
+/* 
+#circle1 {
+    background: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -300px;
+    left: 20px;
+}
+
+
+#circle2{
+    background: white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    top: -500px;
+    left: 1813px;
+}
+
+
+#circle3{
+    background: #7b9fe9;
+    border-radius: 50%;
+    width: 40px;
+    height: 38px;
+    position: relative;
+    top: -924px;
+    left: 600px;
+}
+
+#circle4{
+    background: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -300px;
+    left: 20px;
+} */
+

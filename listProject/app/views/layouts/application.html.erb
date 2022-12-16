@@ -17,12 +17,13 @@
   <% if current_user %>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
+        <%= button_to "LOG OUT", destroy_user_session_path, class: "topbutton", method: :delete %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+    
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,9 +35,7 @@
     </div>
   </nav>
 
-          <% if current_user %>
-          <%= button_to "LOG OUT", destroy_user_session_path, class: "mylink", method: :delete %>
-          <% else %>
+          <% if !current_user %>
           <%= button_to "SIGN IN", user_session_path, class: "mylink" %>
           <% end %>
 
@@ -71,3 +70,4 @@
     <%= yield %>
   </body>
 </html>
+

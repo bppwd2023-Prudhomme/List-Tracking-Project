@@ -20,6 +20,8 @@ class PermissionsController < ApplicationController
 
   # GET /permissions/1/edit
   def edit
+    @users = User.all
+    @groups = Group.all
   end
 
   # POST /permissions or /permissions.json
@@ -58,6 +60,12 @@ class PermissionsController < ApplicationController
       format.html { redirect_to permissions_url, notice: "Permission was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def permisChange
+    puts"\n\n\n\n\n\n\n\n\n\n\n\n"
+    puts params
+    puts"\n\n\n\n\n\n\n\n\n\n\n\n"
   end
 
   private

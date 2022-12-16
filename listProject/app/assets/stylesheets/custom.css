@@ -33,10 +33,12 @@ font-style: normal;
   font-family: 'Isabella Sans', sans-serif;}
 
 body{
+<<<<<<< HEAD
   /* background-color: #9ac7e5; */
     background-image: url(finalbackground.png);
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 
@@ -67,6 +69,7 @@ body{
     font-family: 'Nexa Text Heavy', sans-serif;
     position: relative;
     top: 180px;
+<<<<<<< HEAD
     left: 95px;
     color: #9ac7e5;
 }
@@ -135,4 +138,5 @@ button.mylink{
     top: -300px;
     left: 20px;
 } */
+
 

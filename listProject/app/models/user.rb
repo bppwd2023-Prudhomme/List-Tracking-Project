@@ -12,5 +12,7 @@ class User < ApplicationRecord
   has_many :mylists, class_name: "List"
 
   has_many :sections
+
+  has_one_attached :avatar
   
 end

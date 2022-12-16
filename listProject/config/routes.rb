@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'groups/addUser'
   get 'lists/shared'
   get 'lists/archive'
+  get 'permissions/permisChange'
   get 'page/home'
   resources :groups
   resources :items

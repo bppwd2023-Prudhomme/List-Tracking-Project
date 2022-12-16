@@ -14,8 +14,32 @@ class ListsController < ApplicationController
 
   # GET /lists/1 or /lists/1.json
   def show
-    #@items = items
-  end
+    @items = []
+    @temp = @list.items
+    if params[:sort] != nil
+      if params[:sort] == "i"
+        @temp.where(important: true).each do |item|
+          @items << item
+        end
+        @temp.where(important: false).each do |item|
+          @items << item
+        end
+      elsif params[:sort] == "d"
+        @length = @temp.length()-1
+        for a in 0..@length do
+          @early = @temp[0]
+          @temp.each do |item|
+            if (@items.include?(@early)) or (item.deadline < @early.deadline and !@items.include?(item))
+              @early = item
+            end 
+          end 
+          @items << @early
+        end 
+      end
+    else
+      @items = @list.items 
+    end  
+  end 
 
   # GET /lists/new
   def new
@@ -98,6 +122,6 @@ class ListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def list_params
-      params.require(:list).permit(:user_id, :section_id, :title, :archived)
+      params.require(:list).permit(:user_id, :section_id, :title, :archived, :sort)
     end
 end

@@ -11,14 +11,17 @@
     </div>
   <% end %>
 
+  <div data-controller="permable">
   <div>
     <%= form.label :permissable_type, style: "display: block" %>
-    <%= select_tag(:permissible_type, options_for_select([['User', 'User'], ['Group', 'Group']])) %>
+    <%= select_tag(:permissible_type, options_for_select([['User', 'User'], ['Group', 'Group']]), data: {action: "change->permable#greet"})  %>
   </div>
 
   <div id="permissableDiv">
     <%= form.label :permissable_id, style: "display: block" %>
-    <%= select_tag(:permissable_id, options_from_collection_for_select(@users, 'id', 'email')) %>
+    <%= select_tag(:permissable_id, options_from_collection_for_select(@users, 'id', 'email'), data: {target: "permable.users"}) %>
+    <%= select_tag(:permissable_id, options_from_collection_for_select(@groups, 'id', 'title'), data: {target: "permable.groups"}, id: "groups_id") %>
+  </div>
   </div>
 
   <div>

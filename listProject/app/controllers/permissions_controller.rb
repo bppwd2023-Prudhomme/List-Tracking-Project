@@ -20,6 +20,8 @@ class PermissionsController < ApplicationController
 
   # GET /permissions/1/edit
   def edit
+    @users = User.all
+    @groups = Group.all
   end
 
   # POST /permissions or /permissions.json
@@ -64,8 +66,6 @@ class PermissionsController < ApplicationController
     puts"\n\n\n\n\n\n\n\n\n\n\n\n"
     puts params
     puts"\n\n\n\n\n\n\n\n\n\n\n\n"
-
-    @permissables = params[:permType].all #i do not know if this is right
   end
 
   private

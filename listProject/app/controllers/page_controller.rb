@@ -1,6 +1,8 @@
 class PageController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :home
+  
 
   def home
+    
   end
 end

@@ -12,8 +12,7 @@
   <% end %>
 
   <div>
-    <%= form.label :list_id, style: "display: block" %>
-    <%= form.number_field :list_id %>
+    <%= form.hidden_field :list_id, value: @list.id %>
   </div>
 
   <div>
